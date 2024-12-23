@@ -11,7 +11,7 @@
     "react-router-dom": "^7.1.0",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4",
-    "react-icons": "git+https://github.com/react-icons/react-icons.git"
+    "react-icons": "^4.4.0"  
   },
   "scripts": {
     "start": "react-scripts start",
@@ -25,7 +25,6 @@
       "react-app/jest"
     ]
   },
-
   "browserslist": {
     "production": [
       ">0.2%",
@@ -37,6 +36,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "eslint": "^8.56.0", 
+    "@typescript-eslint/eslint-plugin": "^7.18.0"
   }
-  
 }
