@@ -4,11 +4,14 @@ FROM node:18
 # Set the working directory in the container
 WORKDIR /usr/src/app
 
-# Copy package.json and package-lock.json
+# Install yarn (Yarn is usually not pre-installed with Node images)
+RUN npm install -g yarn
+
+# Copy package.json and yarn.lock files
 COPY package*.json ./
 
-# Install project dependencies
-RUN npm install --legacy-peer-deps --no-audit --progress=false
+# Install project dependencies with yarn (instead of npm)
+RUN yarn install
 
 # Copy application code
 COPY . .
@@ -16,5 +19,5 @@ COPY . .
 # Expose the application on port 3000
 EXPOSE 3000
 
-# Start the application
-CMD ["npm", "start"]
+# Start the application using yarn
+CMD ["yarn", "start"]

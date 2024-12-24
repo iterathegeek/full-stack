@@ -16,7 +16,7 @@ class OrderController extends Controller
         // Fetch all orders
         $orders = Order::with('orderItems')->get();
 
-        return response()->json($orders);
+        return response()->json($orders,200);
     }
 
     
@@ -56,7 +56,7 @@ class OrderController extends Controller
         Redis::del('cart:' . $user_id); // Clear cart
     
         // return response()->json(['success' => 'Order placed successfully']);
-        return response()->json(['success' => 'Order placed successfully', 'order_id' => $order->id]);
+        return response()->json(['success' => 'Order placed successfully', 'order_id' => $order->id], 200);
     }
     
 }

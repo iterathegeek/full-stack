@@ -37,7 +37,7 @@ class OrderControllerTest extends TestCase
         // Check if the order is in the database
         $this->assertDatabaseHas('orders', [
             'user_id' => $user->id,
-            'status' => 'pending',
+            'status' => 'processing',
         ]);
     }
 
@@ -54,7 +54,7 @@ class OrderControllerTest extends TestCase
                          [
                              'id' => $order->id,
                              'user_id' => $user->id,
-                             'status' => 'pending',
+                             'status' => 'processingg',
                          ]
                      ]
                  ]);

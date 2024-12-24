@@ -23,14 +23,14 @@ class CartController extends Controller
             'quantity' => $request->quantity
         ]));
     
-        return response()->json(['success' => 'Product added to cart']);
+        return response()->json(['success' => 'Product added to cart'],200);
     }
 
     public function removeFromCart($product_id) {
         // Delete the product from the cart in Redis
         Redis::hdel('cart:1', $product_id);
     
-        return response()->json(['message' => 'Item removed successfully']);
+        return response()->json(['message' => 'Item removed successfully'],200);
     }
     
 
@@ -45,7 +45,7 @@ class CartController extends Controller
             $cart[] = $item;  // Append the item to the cart array
         }
         
-        return response()->json($cart);
+        return response()->json($cart,200);
     }
     
     
