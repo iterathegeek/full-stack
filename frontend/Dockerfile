@@ -11,7 +11,7 @@ RUN npm install -g yarn
 COPY package*.json ./
 
 # Install project dependencies with yarn (instead of npm)
-RUN yarn install
+RUN yarn install --force
 
 # Copy application code
 COPY . .
