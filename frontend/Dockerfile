@@ -5,7 +5,8 @@ FROM node:18
 WORKDIR /usr/src/app
 
 # Install yarn (Yarn is usually not pre-installed with Node images)
-RUN npm install -g yarn
+RUN npm install -g yarn --force
+
 
 # Copy package.json and yarn.lock files
 COPY package*.json ./
