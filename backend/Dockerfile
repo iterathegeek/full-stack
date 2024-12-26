@@ -1,10 +1,9 @@
 # Use the official PHP image with Composer pre-installed
-FROM php:8.1-fpm
+FROM php:8.2-fpm
 
 # Install system dependencies and PHP extensions
 RUN apt-get update && apt-get install -y \
-    libzip-dev zip unzip git && \
-    docker-php-ext-install zip pdo_mysql
+    php8.2-cli php8.2-fpm php8.2-mbstring php8.2-bcmath php8.2-xml
 
 # Set working directory
 WORKDIR /var/www/html
